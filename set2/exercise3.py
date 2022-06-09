@@ -167,7 +167,16 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    outer_list = []
+    for i in range(10):
+        inner_list = []
+        number_now = 0
+        for x in range(10):
+            inner_list.append(str(number_now))
+            number_now = number_now + 1
+        outer_list.append(inner_list)
+    return outer_list
+    
 
 
 def loops_5():
