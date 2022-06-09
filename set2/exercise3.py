@@ -13,7 +13,12 @@ def is_odd(a_number):
 
     So if a_number modulo two is zero, then it's even.
     """
-    return None
+    finding_out_if_it_is_odd = a_number % 2
+    if finding_out_if_it_is_odd == 0:
+        the_answer = False
+    else:
+        the_answer = True
+    return the_answer
 
 
 def fix_it(moves=True, should_move=True):
