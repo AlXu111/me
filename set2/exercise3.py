@@ -110,7 +110,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    outer_list = []
+    for i in range(10):
+        star_list_horizontal = []
+        for x in range(10):
+            star_list_horizontal.append('*')
+        outer_list.append(star_list_horizontal)
+    return outer_list
 
 
 def loops_3():
@@ -134,7 +140,14 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    outer_list = []
+    for i in range(10):
+        inner_list = []
+        number_now = i
+        for x in range(10):
+            inner_list.append(str(number_now))
+        outer_list.append(inner_list)
+    return outer_list
 
 
 def loops_4():
