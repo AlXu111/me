@@ -206,7 +206,18 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    outer_list = []
+    i = 0
+    for y in range(10):
+        inner_list = []
+        j = 0
+        for x in range(5):
+            inner_list.append("(i" + str(i) + ", j" + str(j) + ")")
+            j = j + 1
+        i = i + 1
+        outer_list.append(inner_list)
+    return outer_list
+
 
 
 def loops_6():
@@ -229,6 +240,17 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
+    outer_list = []
+    amount_in_inner_list = 0
+    for y in range(10):
+        inner_list = []
+        number_in_inner_list = 0
+        for x in range(amount_in_inner_list + 1):
+            inner_list.append(number_in_inner_list)
+            number_in_inner_list = number_in_inner_list + 1
+        amount_in_inner_list = amount_in_inner_list + 1
+        outer_list.append(inner_list)
+    return outer_list
     return None
 
 
