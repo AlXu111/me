@@ -244,15 +244,11 @@ def loops_6():
     amount_in_inner_list = 0
     for y in range(10):
         inner_list = []
-        number_in_inner_list = 0
         for x in range(amount_in_inner_list + 1):
-            inner_list.append(number_in_inner_list)
-            number_in_inner_list = number_in_inner_list + 1
+            inner_list.append(str(x))
         amount_in_inner_list = amount_in_inner_list + 1
         outer_list.append(inner_list)
     return outer_list
-    return None
-
 
 def loops_7():
     """Make a pyramid.
@@ -275,7 +271,18 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    outer_list = []
+    how_many_stars_should_be_edited = 1
+    for y in range(5):
+        inner_list = [' ',' ',' ',' ',' ',' ',' ',' ',' ']
+        gap_between_stars = 0
+        for x in range(how_many_stars_should_be_edited):
+            inner_list[5 + (gap_between_stars-1)] = '*'
+            inner_list[5 - (gap_between_stars+1)] = '*'
+            gap_between_stars = gap_between_stars + 1
+        how_many_stars_should_be_edited = how_many_stars_should_be_edited + 1
+        outer_list.append(inner_list)
+    return outer_list
 
 
 def little_printer(some_kind_of_list, exercise_name):

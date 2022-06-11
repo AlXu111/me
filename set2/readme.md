@@ -8,3 +8,4 @@ TODO: Reflect on what you learned this week and what is still unclear
 18:30 - finished up to loops 5 in ex 3. left uni, leaving the rest for hw
 11/06/22
 21:15 - recommencing work
+22:55 - finished everything :D
