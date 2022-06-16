@@ -17,7 +17,12 @@ def loop_ranger(start, stop=None, step=1):
     Look up for how range() works in the python docs. You could  answer this
     with just the range function, but we'd like you to do it the long way.
     """
-    return None
+    numbernow = start
+    numberlist = []
+    while numbernow < stop:
+        numberlist.append(numbernow)
+        numbernow = numbernow + step
+    return numberlist
 
 
 def two_step_ranger(start, stop):
