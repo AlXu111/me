@@ -33,7 +33,11 @@ def two_step_ranger(start, stop):
 
     You can either reuse loop_ranger, or the range function that in the standard library
     """
-    return None
+    numberstep = range(start, stop, 2)
+    numberlist = []
+    for x in numberstep:
+        numberlist.append(x)
+    return numberlist
 
 
 def stubborn_asker(low, high):
@@ -44,7 +48,14 @@ def stubborn_asker(low, high):
 
     Look up the docs for a function called "input"
     """
-    return None
+    iscorrect = False
+    user_inputted_number = int(input("Input a number to test: "))
+    while iscorrect == False:
+        if low < user_inputted_number < high:
+            iscorrect = True
+        else:
+            user_inputted_number = int(input("Input another number: "))
+    return user_inputted_number
 
 
 def not_number_rejector(message):
@@ -54,7 +65,15 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    thing_inputted = input("Please input a number: ")
+    while True:
+        try:
+            numberchecker = int(thing_inputted)
+        except:
+            thing_inputted = input("That ain't a number: ")
+        finally:
+            print("Cool, a number")
+            return thing_inputted
 
 
 def super_asker(low, high):
@@ -63,7 +82,20 @@ def super_asker(low, high):
     Combine what you learnt from stubborn_asker and not_number_rejector
     to make a function that does it all!
     """
-    return None
+    while True:
+        is_a_number = True
+        try:
+            inputted_thing = int(input("Give me a number: "))
+        except:
+            print("OI this not number")
+            is_a_number = False
+        finally:
+            if is_a_number == True:
+                if low <= inputted_thing <= high:
+                    print("cool cool")
+                    return inputted_thing
+
+        
 
 
 if __name__ == "__main__":
