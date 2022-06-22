@@ -4,3 +4,5 @@ TODO: Reflect on what you learned this week and what is still unclear.
 16:25 - got ben to fix it, if there is another problem, print this command in terminal
 pip install matplotlib
 17:03 - if there is a "while True" line, it just keeps running until the function "return" is true
+22/06/22
+11:06 - exception as e for debugging

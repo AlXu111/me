@@ -29,6 +29,56 @@ def advancedGuessingGame():
     purpose if you can!
     """
 
+    print("\nWelcome to the guessing game!")
+    print("A number between _ and _ ?")
+    while True:
+      is_a_number = True
+      try:
+        lowerBound = int(input("Enter a lower bound: " ))
+      except:
+        print( "That is not an acceptable input. Please input an integer")
+        is_a_number = False
+      finally:
+        if is_a_number == True:
+          print(str(lowerBound) + " is acceptable")
+          lowerBound = int(lowerBound)
+          break
+    while True:
+      is_a_number = True
+      try:
+        upperBound = int(input("Enter an upper bound: " ))
+      except:
+        print( "That is not an acceptable input. Please input an integer")
+        is_a_number = False
+      finally:
+        if  is_a_number == True and upperBound > lowerBound:
+          print(str(upperBound) + " is acceptable")
+          upperBound = int(upperBound)
+          break
+        elif is_a_number == True:
+          print(f"Upper bound must be larger than Lower bound")
+      
+      
+    print(f"OK then, a number between {lowerBound} and {upperBound} ?")
+    actualNumber = random.randint(lowerBound, upperBound)
+
+    guessed = False
+
+    while not guessed:
+      try:
+        guessedNumber = int(input("Guess a number: "))
+        print(f"You guessed {guessedNumber},")
+        if guessedNumber == actualNumber:
+            print(f"You got it!! It was {actualNumber}")
+            guessed = True
+        elif guessedNumber > upperBound or guessedNumber < lowerBound :
+          print("Please input a number in between the bounds")
+        elif guessedNumber < actualNumber:
+            print("Too small, try again :'(")
+        else:
+            print("Too big, try again :'(")
+      except:
+        print("That is not a valid input")
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
