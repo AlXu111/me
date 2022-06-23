@@ -37,14 +37,18 @@ def get_some_details():
          dictionary, you'll need integer indeces for lists, and named keys for
          dictionaries.
     """
-    json_data = open(LOCAL + "/lazyduck.json").read()
-
+    json_data = open("./set4/lazyduck.json").read()
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+    d = data["results"][0]
+    last_name = d["name"]["last"]
+    pass_word = d["login"]["password"]
+    pidpluspc = int(d["id"]["value"]) + int(d["location"]["postcode"])
+    return {"lastName": last_name, "password": pass_word, "postcodePlusID": pidpluspc}
 
 
 def wordy_pyramid():
     """Make a pyramid out of real words.
+
 
     There is a random word generator here:
     https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=20
@@ -78,7 +82,20 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
     pyramid = []
-
+    wordlength = 3
+    while wordlength < 20:
+        url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={str(wordlength)}"
+        r = requests.get(url)
+        word = r.text
+        pyramid.append(word)
+        wordlength = wordlength + 2
+    wordlength = 20
+    while wordlength > 3:
+        url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={str(wordlength)}"
+        r = requests.get(url)
+        word = r.text
+        pyramid.append(word)
+        wordlength = wordlength - 2
     return pyramid
 
 
@@ -99,7 +116,7 @@ def pokedex(low=1, high=5):
     id = 5
     url = f"https://pokeapi.co/api/v2/pokemon/{id}"
     r = requests.get(url)
-    if r.status_code is 200:
+    if r.status_code == 200:
         the_json = json.loads(r.text)
 
     return {"name": None, "weight": None, "height": None}
