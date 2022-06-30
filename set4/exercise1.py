@@ -16,7 +16,7 @@ if LOCAL != CWD:
     Be careful that your relative paths are
     relative to where you think they are
     LOCAL: {LOCAL}
-    CWD: "CWD
+    CWD: {CWD}
     """
     )
 
@@ -114,13 +114,21 @@ def pokedex(low=1, high=5):
          variable and then future access will be easier.
     """
     id = low
-    for i in (high - low):
+    lower_boundary = low
+    higher_boundary = high
+    tallest_height = 0
+    for i in range(higher_boundary - lower_boundary):
         url = f"https://pokeapi.co/api/v2/pokemon/{id}"
         r = requests.get(url)
         if r.status_code == 200:
             the_json = json.loads(r.text)
-            weight = the_json[]
-    return {"name": None, "weight": None, "height": None}
+            height = the_json["height"]
+            if height > tallest_height:
+                tallest_height = height
+                weight = the_json["weight"]
+                name = the_json["name"]
+            id += 1
+    return {"name": name, "weight": weight, "height": tallest_height}
 
 
 def diarist():
@@ -140,6 +148,9 @@ def diarist():
 
     NOTE: this function doesn't return anything. It has the _side effect_ of modifying the file system
     """
+    with open(f"{LOCAL}/Trispokedovetiles(laser).gcode", "r") as laseread:
+        for line in laseread:
+            print(line)
     pass
 
 
