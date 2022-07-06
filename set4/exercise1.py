@@ -118,7 +118,6 @@ def pokedex(low=1, high=5):
     r = requests.get(url)
     if r.status_code == 200:
         the_json = json.loads(r.text)
-
     return {"name": None, "weight": None, "height": None}
 
 
