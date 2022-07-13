@@ -7,3 +7,4 @@ if you put a semicolon at the end of ur code in pandas, it gets rid of the rando
 
 
 really helps with refactoring and getting different functions to call over and over again
+ctrl+shift+L for the mutlivariable one
