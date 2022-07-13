@@ -65,15 +65,18 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    thing_inputted = input("Please input a number: ")
     while True:
+        is_a_number = True
+        thing_inputted = input("Please input a number: ")
         try:
             numberchecker = int(thing_inputted)
         except:
-            thing_inputted = input("That ain't a number: ")
+            print("This is not a number")
+            is_a_number = False
         finally:
-            print("Cool, a number")
-            return thing_inputted
+            if is_a_number == True:
+                print("Cool, a number")
+                return thing_inputted
 
 
 def super_asker(low, high):
