@@ -91,7 +91,7 @@ def abba(source="abba", guard=3):
     aobaobbbabbaoaaobbbaoaaobaobaobbba
                 and so on...
     """
-    def apply_rules(letter, guard):
+    def apply_rules(letter):
         """Control the substitution.
 
         You need to change these substitutions to make it work.
@@ -99,16 +99,22 @@ def abba(source="abba", guard=3):
         Hint: when guard == -1 return the letter.
         """
         if letter == "a":
-            return "a"
+            return "bba"
         elif letter == "b":
-            return "b"
+            return "aob"
         elif letter == "o":
-            return "o"
+            return "oa"
         else:
             return letter
 
     # write the rest of the function here
-    pass
+    for j in range(guard):
+        message = ""
+        for i in source:
+            changed_letter = apply_rules(i)
+            message = str(message) + str(changed_letter)
+        source = message
+    return source
 
 
 def koch(t, order, size):
