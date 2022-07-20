@@ -11,3 +11,5 @@ ctrl+shift+L for the mutlivariable one
 i am editing this because i need to set up my git stuff because my old laptop died
 is this working now?
 i am now reversing this to see if this can work on the new laptop
+
+I have now finally finished it, turtle is an interesting part of python, would like to learn more about it although it might not be relevant, but i do feel like programming something to move this way is interesting
