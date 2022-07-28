@@ -268,19 +268,29 @@ def fast_filler(number_of_words=200) -> str:
         with open(fname, mode = "w", encoding = "utf-8") as history_book:
             my_dict = make_filler_text_dictionary()
             json.dump(my_dict, history_book)
+        words = []
+        current_rand_number_keys = random.randint(3,6)
+        current_rand_number_values = random.randint(0,3)
+        words.append(my_dict[current_rand_number_keys][current_rand_number_values].capitalize())
+        for number in range(number_of_words-1):
+            current_rand_number_keys = random.randint(3,6)
+            current_rand_number_values = random.randint(0,3)
+            words.append(my_dict[current_rand_number_keys][current_rand_number_values])
+        final_string = " ".join(words)
+        final_string = final_string + "."
     else:
         with open(fname, mode = 'r') as history_book:
             my_dict = json.load(history_book)
-    words = []
-    current_rand_number_keys = random.randint(3,6)
-    current_rand_number_values = random.randint(0,3)
-    words.append(my_dict[str(current_rand_number_keys)][current_rand_number_values].capitalize())
-    for number in range(number_of_words-1):
+        words = []
         current_rand_number_keys = random.randint(3,6)
         current_rand_number_values = random.randint(0,3)
-        words.append(my_dict[str(current_rand_number_keys)][current_rand_number_values])
-    final_string = " ".join(words)
-    final_string = final_string + "."
+        words.append(my_dict[str(current_rand_number_keys)][current_rand_number_values].capitalize())
+        for number in range(number_of_words-1):
+            current_rand_number_keys = random.randint(3,6)
+            current_rand_number_values = random.randint(0,3)
+            words.append(my_dict[str(current_rand_number_keys)][current_rand_number_values])
+        final_string = " ".join(words)
+        final_string = final_string + "."
     return final_string
 
 
