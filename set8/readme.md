@@ -17,3 +17,9 @@ reading a file means you do not change the encoding as you must read it with the
 (import os first) os.path.isfile(path_string) checks if the file exists
 \n = new line
 \t = tab (both are used in an f string if you wanna format it)
+
+in try and except cases, you can use error messages in your except functions ( except ZeroDivisionError as z)
+finally cases are rarely used, but you can still use it
+except Exception as e is just a generic error
+exceptions are fast as python picks up back
+"python is ask forgiveness rather than permission"
