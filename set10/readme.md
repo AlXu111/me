@@ -1,1 +1,3 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+Peter Cochrane and Brian Gilligan might have been the culprits for 81 parks on date fiasco
+It actually seems like governnments and organisations generally do not care for caves. I accessed a database for all the caves in NSW, but its not a very informative database nor is it usable for python programming. I think people should start caring about caves more
